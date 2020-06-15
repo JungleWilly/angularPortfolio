@@ -1,0 +1,19 @@
+mat-toolbar {
+  justify-content: space-between;
+  background: #343434;
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.nav-links {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+.nav-links a {
+  display: inline-block;
+  color: white;
+  margin: 0rem 2rem;
+}

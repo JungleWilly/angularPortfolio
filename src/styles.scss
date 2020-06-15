@@ -1,11 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-@mixin flex($justify, $align, $direction) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-  align-items: $align;
-}
 @import "@angular/material/prebuilt-themes/purple-green.css";
 
 $header1: 2.5rem;
@@ -28,6 +22,7 @@ body {
   background: #252525;
   font-size: 62.5%;
   font-family: "Montserrat", sans-serif;
+  color: white;
 }
 
 h1 {

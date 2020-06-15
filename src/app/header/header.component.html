@@ -1,0 +1,40 @@
+<mat-toolbar>
+  <div>
+    <h1>MyPortFolio</h1>
+  </div>
+
+  <ul class="nav-links">
+    <li>
+      <a
+        routerLink="/home"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/projects"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Projects</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/about"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >About</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/contact"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Let's Work Together !</a
+      >
+    </li>
+  </ul>
+</mat-toolbar>

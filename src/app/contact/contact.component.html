@@ -1,0 +1,47 @@
+<div class="container">
+  <form class="form-container">
+    <mat-form-field>
+      <mat-label>Name :</mat-label>
+      <input matInput placeholder="Name" required />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Your Job :</mat-label>
+      <input matInput placeholder="" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Company :</mat-label>
+      <input matInput placeholder="" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Phone Number :</mat-label>
+      <input
+        #input
+        type="tel"
+        pattern="[0-9]{10}"
+        matInput
+        placeholder="Téléphone"
+      />
+      <span matSuffix> {{ input.value?.length || 0 }}/10 </span>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email :</mat-label>
+      <input
+        type="email"
+        matInput
+        placeholder="Ex. youremail@gmail.com"
+        required
+      />
+      <!-- <mat-error *ngIf="email.invalid"> {{ getErrorMessage() }} </mat-error> -->
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Leave a comment</mat-label>
+      <textarea
+        matInput
+        placeholder="Ex. I want to work with you because..."
+      ></textarea>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="accent">
+      <span>Let's Work !</span>
+    </button>
+  </form>
+</div>
