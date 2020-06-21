@@ -2,36 +2,16 @@
   <div class="project-title">
     <h2>My Projects</h2>
   </div>
-  <div class="projects-container">
-    <div class="project-list">
-      <div class="project-card" *ngFor="let project of projects">
-        <mat-card class="project-list">
-          <mat-card-header>
-            <div mat-card-avatar>
-              <img class="card-header-image" src="{{ project.logo }}" alt="" />
-            </div>
-            <mat-card-title>
-              {{ project.name }}
-            </mat-card-title>
-
-            <mat-card-subtitle>
-              subtitle
-            </mat-card-subtitle>
-          </mat-card-header>
-          <img
-            class="project-image"
-            src="{{ project.image }}"
-            alt="{{ project.name }} image"
-          />
-          <mat-card-content>
-            <p>description</p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-raised-button color="accent">Details</button>
-            <button mat-raised-button color="primary">Website</button>
-            <button mat-raised-button color="primary">Github</button>
-          </mat-card-actions>
-        </mat-card>
+  <div class="project-list">
+    <div class="project-card" *ngFor="let project of projects; let i = index">
+      <img class="project-image" src="{{ project.image }}" alt="" />
+      <div class="hover-div">
+        <div>
+          <p>{{ project.name }}</p>
+        </div>
+        <div>
+          <button mat-button (click)="openDialog(i)">Open dialog</button>
+        </div>
       </div>
     </div>
   </div>

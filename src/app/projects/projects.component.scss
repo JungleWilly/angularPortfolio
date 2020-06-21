@@ -1,3 +1,8 @@
+.projects-container {
+  width: 90%;
+  margin: auto;
+}
+
 .project-title {
   margin: 2rem;
 }
@@ -5,23 +10,48 @@
 .project-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
   align-items: center;
+}
+
+.hover-div {
+  display: none;
 }
 
 .project-card {
   max-width: 40rem;
   margin: 2rem;
-  flex: 1 1 30rem;
+  flex: 1 1 40rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+
+  &:hover {
+    .hover-div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba($color: #3a3a3a, $alpha: 0.5);
+      width: 100%;
+      height: 35rem;
+      text-align: center;
+    }
+
+    button {
+      width: 50%;
+      background: transparent;
+      color: #38d39f;
+      border: 1px solid #38d39f;
+      margin-bottom: 2rem;
+      cursor: pointer;
+    }
+  }
 }
 
 .project-image {
   width: 100%;
   height: 35rem;
   background-size: cover;
-}
-
-.card-header-image {
-  background-size: cover;
-  width: 100%;
 }

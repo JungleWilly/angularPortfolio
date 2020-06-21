@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../shared/projects.model';
+import { MatDialog } from '@angular/material/dialog';
+import { ProjectDetailsComponent } from '../project-details/project-details.component';
 
 @Component({
   selector: 'app-projects',
@@ -34,7 +36,16 @@ export class ProjectsComponent implements OnInit {
       'https://cdn.worldvectorlogo.com/logos/angular-icon.svg'
     ),
   ];
-  constructor() {}
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog(index) {
+    const dialogRef = this.dialog.open(ProjectDetailsComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
   ngOnInit(): void {}
 }
