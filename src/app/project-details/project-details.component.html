@@ -1,1 +1,35 @@
-<p>project-details works!</p>
+<h2 mat-dialog-title>{{ project.name }}</h2>
+<mat-dialog-content>
+  <img src="{{ project.image }}" alt="" />
+  <h4>Framework :</h4>
+  <img src="{{ project.logo }}" alt="" />
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button
+    mat-icon-button
+    mat-dialog-close
+    matTooltip="Go Back"
+    aria-label="Back button"
+    aria-label="precedent"
+  >
+    <mat-icon>keyboard_backspace</mat-icon>
+  </button>
+
+  <button
+    mat-icon-button
+    [mat-dialog-close]="true"
+    matTooltip="View Code"
+    aria-label="Github code"
+  >
+    <mat-icon>code</mat-icon>
+  </button>
+
+  <button
+    mat-icon-button
+    [mat-dialog-close]="true"
+    matTooltip="Website"
+    aria-label="link button to the site"
+  >
+    <mat-icon>open_in_new</mat-icon>
+  </button>
+</mat-dialog-actions>

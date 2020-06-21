@@ -13,6 +13,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { ProjectService } from './shared/service/project.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
     MaterialModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [ProjectService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

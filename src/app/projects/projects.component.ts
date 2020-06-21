@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Project } from '../shared/projects.model';
 import { MatDialog } from '@angular/material/dialog';
 import { ProjectDetailsComponent } from '../project-details/project-details.component';
+import { ProjectService } from '../shared/service/project.service';
 
 @Component({
   selector: 'app-projects',
@@ -9,43 +10,32 @@ import { ProjectDetailsComponent } from '../project-details/project-details.comp
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit {
-  public projects: Project[] = [
-    new Project(
-      'Cocktail-app',
-      'https://images.unsplash.com/photo-1592320937521-84c88747a68a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80',
-      'https://cdn.worldvectorlogo.com/logos/angular-icon.svg'
-    ),
-    new Project(
-      'Blog',
-      'https://images.unsplash.com/photo-1592277320579-6826efd42e67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=629&q=80',
-      'https://cdn.worldvectorlogo.com/logos/angular-icon.svg'
-    ),
-    new Project(
-      'travelly',
-      'https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80',
-      'https://cdn.worldvectorlogo.com/logos/angular-icon.svg'
-    ),
-    new Project(
-      'Cocktail-app',
-      'https://images.unsplash.com/photo-1592320937521-84c88747a68a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80',
-      'https://cdn.worldvectorlogo.com/logos/angular-icon.svg'
-    ),
-    new Project(
-      'Cocktail-app',
-      'https://images.unsplash.com/photo-1592320937521-84c88747a68a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80',
-      'https://cdn.worldvectorlogo.com/logos/angular-icon.svg'
-    ),
-  ];
+  projects: Project[];
+  activeProject: number;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(
+    public dialog: MatDialog,
+    private projectService: ProjectService
+  ) {}
+
+  ngOnInit(): void {
+    this.projectService.projects.subscribe((projects: Project[]) => {
+      this.projects = projects;
+    });
+  }
 
   openDialog(index) {
-    const dialogRef = this.dialog.open(ProjectDetailsComponent);
+    const dialogRef = this.dialog.open(ProjectDetailsComponent, {
+      height: 'calc(100% - 30px)',
+      width: 'calc(100% - 30px)',
+      maxWidth: '100%',
+      maxHeight: '100%',
+    });
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
+    this.activeProject = index;
+    this.projectService.selectProject(index);
   }
-
-  ngOnInit(): void {}
 }
