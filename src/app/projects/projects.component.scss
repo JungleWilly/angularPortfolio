@@ -2,6 +2,26 @@
   margin: 2rem;
 }
 
-.projects-container {
-  min-height: 80vh;
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.project-card {
+  max-width: 40rem;
+  margin: 2rem;
+  flex: 1 1 30rem;
+}
+
+.project-image {
+  width: 100%;
+  height: 35rem;
+  background-size: cover;
+}
+
+.card-header-image {
+  background-size: cover;
+  width: 100%;
 }

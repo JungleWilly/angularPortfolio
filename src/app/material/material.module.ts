@@ -8,6 +8,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 
 const Material = [
   MatToolbarModule,
@@ -18,6 +20,8 @@ const Material = [
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
+  MatCardModule,
+  MatListModule,
 ];
 
 @NgModule({
