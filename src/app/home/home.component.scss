@@ -17,25 +17,23 @@ $gray-text: #2c2c2c;
 .intro {
   min-height: 90vh;
   width: 90%;
-  margin: auto;
+  margin: 2rem auto;
   flex-wrap: wrap;
   z-index: 1;
   @include flex(space-between, center, row);
   h2 {
     font-size: 8rem;
     padding-top: 2rem;
-    color: white;
     z-index: 2;
     display: inline-block;
   }
   h3 {
     font-size: 6rem;
     padding: 2rem 0rem;
-    color: #9c27b0;
+    color: #38d39f;
   }
   p {
     padding-top: 2rem;
-    color: white;
   }
 }
 
@@ -58,12 +56,17 @@ $gray-text: #2c2c2c;
   flex: 1 1 40rem;
 }
 
+.intro-images svg {
+  width: 100%;
+  padding-left: 5rem;
+}
+
 #plant-left {
-  animation: plant 1.5s ease infinite alternate;
+  animation: plant 2s ease infinite alternate;
 }
 
 #plant-right {
-  animation: plant 1.5s ease infinite alternate 0.5s;
+  animation: plant 2s ease infinite alternate 0.5s;
 }
 
 #me {

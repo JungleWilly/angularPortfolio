@@ -20,9 +20,14 @@ $gray-text: #2c2c2c;
 
 html,
 body {
-  background: #252525;
+  background: white;
+  color: #252525;
   font-size: 62.5%;
   font-family: "Montserrat", sans-serif !important;
+}
+
+.night {
+  background: #252525;
   color: white;
 }
 

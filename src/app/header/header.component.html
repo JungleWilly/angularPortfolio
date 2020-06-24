@@ -1,16 +1,11 @@
-<mat-toolbar>
+<div class="navbar" color="accent">
   <div>
     <h1>MyPortFolio</h1>
   </div>
 
   <ul class="nav-links">
-    <li>
-      <a
-        routerLink="/home"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Home</a
-      >
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/home">Home</a>
     </li>
     <li>
       <a
@@ -37,4 +32,12 @@
       >
     </li>
   </ul>
-</mat-toolbar>
+  <div class="switch-theme">
+    <div class="sun"></div>
+    <div class="toggle-wrapper">
+      <input id="switch" type="checkbox" />
+      <label id="toggle" for="switch">Toggle</label>
+    </div>
+    <div class="moon"></div>
+  </div>
+</div>
