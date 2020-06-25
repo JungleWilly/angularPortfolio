@@ -2,8 +2,27 @@
   <div class="project-title">
     <h2>My Projects</h2>
   </div>
+  <mat-form-field>
+    <mat-label>
+      Search a project
+    </mat-label>
+    <input matInput type="text" [(ngModel)]="search" />
+    <button
+      mat-button
+      *ngIf="search"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="search = ''"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
   <div class="project-list">
-    <div class="project-card" *ngFor="let project of projects; let i = index">
+    <div
+      class="project-card"
+      *ngFor="let project of projects | filter: search; let i = index"
+    >
       <img class="project-image" src="{{ project.image }}" alt="" />
       <div class="hover-div">
         <div>

@@ -6,4 +6,7 @@
 mat-dialog-content {
   max-height: unset !important;
   flex: 1 0 0;
+  img {
+    width: 100%;
+  }
 }

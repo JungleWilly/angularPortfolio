@@ -12,6 +12,7 @@ import { ProjectService } from '../shared/service/project.service';
 export class ProjectsComponent implements OnInit {
   projects: Project[];
   activeProject: number;
+  search: string = '';
 
   constructor(
     public dialog: MatDialog,
