@@ -1,16 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "@angular/material/prebuilt-themes/purple-green.css";
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-$header1: 2.5rem;
-$header2: 4rem;
-$header3: 2.5rem;
-$header4: 2rem;
-$text: 2.5rem;
-$gradient: linear-gradient(left, #38d39f, #38a4d3);
-$background-color: #154343;
-$gray-text: #2c2c2c;
+// Imports for Angular Material Theming
+@import "~@angular/material/theming";
+@include mat-core();
+
+// Light theme
+$light-primary: mat-palette($mat-indigo);
+$light-accent: mat-palette($mat-pink, A200, A100, A400);
+$light-theme: mat-light-theme($light-primary, $light-accent);
+
+// Dark theme
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent: mat-palette($mat-amber, A200, A100, A400);
+$dark-warn: mat-palette($mat-deep-orange);
+$dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+html,
+body {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+}
+
+.color-scheme-light {
+  @include angular-material-theme($light-theme);
+  background: white;
+}
+
+.color-scheme-dark {
+  @include angular-material-theme($dark-theme);
+  background: black;
+}
 
 * {
   margin: 0;
@@ -18,48 +39,10 @@ $gray-text: #2c2c2c;
   background-origin: border-box;
 }
 
-html,
-body {
-  background: white;
-  color: #252525;
-  font-size: 62.5%;
-  font-family: "Montserrat", sans-serif !important;
-}
-
-.night {
-  background: #252525;
-  color: white;
-}
-
-h1 {
-  font-size: $header1;
-}
-
-li,
-button,
-label,
-p,
-a {
-  font-size: $text;
-}
-h2 {
-  font-size: $header2;
-}
-
-h3 {
-  font-size: $header3;
-}
-
-h4,
-h5 {
-  font-size: $header4;
-}
-
 ul {
   list-style: none;
 }
 
 a {
-  color: black;
-  text-decoration: $gray-text;
+  text-decoration: none;
 }
