@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Project } from '../projects.model';
 import { BehaviorSubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -49,6 +50,15 @@ export class ProjectService {
     ),
   ]);
 
+  constructor(private http: HttpClient) {
+    this.http
+      .put(
+        'https://guillaumeportfolio-c398d.firebaseio.com/projects.json',
+        this.projects.value
+      )
+      .subscribe((res) => console.log(res));
+  }
+
   public project: BehaviorSubject<Project> = new BehaviorSubject(
     this.projects.value[0]
   );
@@ -56,6 +66,4 @@ export class ProjectService {
   selectProject(index: number) {
     this.project.next(this.projects.value[index]);
   }
-
-  constructor() {}
 }

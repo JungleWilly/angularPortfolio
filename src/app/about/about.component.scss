@@ -1,0 +1,61 @@
+.about-container {
+  width: 90%;
+  margin: auto;
+  height: 90vh;
+}
+
+h2 {
+  line-height: 3;
+}
+
+.section {
+  display: flex;
+  padding: 5rem 0;
+
+  &-background {
+    flex-flow: row nowrap;
+  }
+  &-skills {
+    justify-content: center;
+  }
+}
+
+.background {
+  &-title {
+    min-width: 20rem;
+    margin-right: 7rem;
+    text-align: right;
+    padding-right: 0.8rem;
+  }
+  &-content {
+    width: 100%;
+  }
+}
+
+.skills {
+  &-title {
+    text-align: right;
+    min-width: 20rem;
+    margin-right: 7rem;
+    padding-right: 0.9rem;
+  }
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &-category {
+    li {
+      color: rgb(78, 78, 78);
+    }
+  }
+
+  &-category-title {
+    text-transform: uppercase;
+  }
+}
+
+h4 {
+  font-size: 2rem;
+}

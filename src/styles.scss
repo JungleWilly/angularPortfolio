@@ -21,6 +21,7 @@ html,
 body {
   font-size: 62.5%;
   font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
 }
 
 .color-scheme-light {
@@ -36,7 +37,7 @@ body {
 * {
   margin: 0;
   padding: 0;
-  background-origin: border-box;
+  box-sizing: border-box;
 }
 
 ul {
@@ -45,4 +46,17 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+p,
+li {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3rem;
 }
