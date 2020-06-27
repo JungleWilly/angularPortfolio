@@ -40,6 +40,7 @@ import { FilterPipe } from './shared/pipes/filter.pipe';
     MaterialModule,
     AppRoutingModule,
   ],
+  entryComponents: [ProjectDetailsComponent],
   providers: [ProjectService],
   bootstrap: [AppComponent],
 })

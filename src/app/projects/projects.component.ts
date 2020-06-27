@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../shared/projects.model';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ProjectDetailsComponent } from '../project-details/project-details.component';
 import { ProjectService } from '../shared/service/project.service';
 
@@ -26,12 +26,15 @@ export class ProjectsComponent implements OnInit {
   }
 
   openDialog(index) {
-    const dialogRef = this.dialog.open(ProjectDetailsComponent, {
-      height: 'calc(100% - 30px)',
-      width: 'calc(100% - 30px)',
-      maxWidth: '100%',
-      maxHeight: '100%',
-    });
+    const dialogRef: MatDialogRef<ProjectDetailsComponent> = this.dialog.open(
+      ProjectDetailsComponent,
+      {
+        height: 'calc(100% - 30px)',
+        width: 'calc(100% - 30px)',
+        maxWidth: '100%',
+        maxHeight: '100%',
+      }
+    );
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);

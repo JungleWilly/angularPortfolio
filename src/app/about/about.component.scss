@@ -1,7 +1,7 @@
 .about-container {
   width: 90%;
   margin: auto;
-  height: 90vh;
+  min-height: 90vh;
 }
 
 h2 {
@@ -58,4 +58,24 @@ h2 {
 
 h4 {
   font-size: 2rem;
+}
+
+.certification {
+  &-title {
+    max-width: 20rem;
+    margin-right: 4.8rem;
+    text-align: right;
+    padding-right: 0.8rem;
+    h3 {
+      font-size: 2.7rem;
+    }
+  }
+
+  &-table {
+    width: 100%;
+  }
+}
+
+table {
+  width: 100%;
 }

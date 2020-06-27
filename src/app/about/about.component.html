@@ -49,9 +49,47 @@
       </div>
     </div>
   </section>
-  <section class="section">
+  <section class="section section-certification">
     <div class="certification-title">
       <h3>Certifications</h3>
+    </div>
+    <div class="certification-table">
+      <table mat-table [dataSource]="dataSource">
+        <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="year">
+          <th mat-header-cell *matHeaderCellDef>Année</th>
+          <td mat-cell *matCellDef="let element">{{ element.year }}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="link">
+          <th mat-header-cell *matHeaderCellDef>Link</th>
+          <td mat-cell *matCellDef="let element">
+            <a href="{{ element.link }}" target="_blank">
+              <button
+                mat-icon-button
+                matTooltip="Certification Link "
+                matTooltipPosition="left"
+                aria-label="link button to the certification"
+              >
+                <mat-icon>open_in_new</mat-icon>
+              </button>
+            </a>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
     </div>
   </section>
 </div>
