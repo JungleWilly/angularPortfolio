@@ -1,21 +1,21 @@
 <div class="container">
-  <form class="form-container">
+  <form class="form-container" novalidate [formGroup]="myForm">
     <mat-form-field>
       <mat-label>Name :</mat-label>
-      <input matInput placeholder="Name" required />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Your Job :</mat-label>
-      <input matInput placeholder="" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Company :</mat-label>
-      <input matInput placeholder="" />
+      <input
+        formControlName="name"
+        name="name"
+        matInput
+        placeholder="Name"
+        required
+      />
+      <mat-error *ngIf="errorsForm.name"> {{ errorsForm.name }} </mat-error>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Phone Number :</mat-label>
       <input
         #input
+        formControlName="phone"
         type="tel"
         pattern="[0-9]{10}"
         matInput
@@ -26,21 +26,24 @@
     <mat-form-field>
       <mat-label>Email :</mat-label>
       <input
+        email
         type="email"
+        formControlName="email"
         matInput
         placeholder="Ex. youremail@gmail.com"
         required
       />
-      <!-- <mat-error *ngIf="email.invalid"> {{ getErrorMessage() }} </mat-error> -->
+      <mat-error *ngIf="errorsForm.email"> {{ errorsForm.email }} </mat-error>
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Leave a comment</mat-label>
       <textarea
+        formControlName="comment"
         matInput
         placeholder="Ex. I want to work with you because..."
       ></textarea>
     </mat-form-field>
-    <button type="submit" mat-raised-button color="accent">
+    <button type="submit" mat-raised-button color="primary">
       <span>Let's Work !</span>
     </button>
   </form>

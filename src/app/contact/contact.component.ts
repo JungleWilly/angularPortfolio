@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  FormControl,
+  Validators,
+} from '@angular/forms';
+
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-contact',
@@ -6,7 +14,60 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
-  constructor() {}
+  myForm: FormGroup;
+  subscription: Subscription;
+
+  constructor() {
+    this.createForm();
+  }
 
   ngOnInit(): void {}
+
+  createForm() {
+    this.myForm = new FormGroup({
+      name: new FormControl('', [Validators.required, Validators.minLength(4)]),
+      phone: new FormControl(''),
+      email: new FormControl('', Validators.required),
+      comment: new FormControl(),
+    });
+
+    this.subscription = this.myForm.statusChanges.subscribe(() =>
+      this.changeStatusForm()
+    );
+  }
+
+  changeStatusForm() {
+    if (!this.myForm) {
+      return;
+    }
+    const form = this.myForm;
+
+    for (const field in this.errorsForm) {
+      this.errorsForm[field] = '';
+      const control = form.get(field);
+      if (control && control.dirty && control.invalid) {
+        const messages = this.messageErrors[field];
+        for (const key in control.errors) {
+          console.log(control.errors);
+          this.errorsForm[field] += messages[key] + ' ';
+        }
+      }
+    }
+  }
+
+  errorsForm = {
+    name: '',
+    email: '',
+  };
+
+  messageErrors = {
+    name: {
+      required: 'Ce champ est requis.',
+      minlength: 'Vos nom et prénom doivent faire au moins 4 caractères.',
+    },
+    email: {
+      required: 'Entrez un email.',
+      invalid: 'Rentrez une adresse email valide.',
+    },
+  };
 }
