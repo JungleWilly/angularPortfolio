@@ -17,18 +17,18 @@ export class ContactComponent implements OnInit {
   myForm: FormGroup;
   subscription: Subscription;
 
-  constructor() {
+  constructor(private fb: FormBuilder) {
     this.createForm();
   }
 
   ngOnInit(): void {}
 
   createForm() {
-    this.myForm = new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.minLength(4)]),
-      phone: new FormControl(''),
-      email: new FormControl('', Validators.required),
-      comment: new FormControl(),
+    this.myForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(4)]],
+      phone: [''],
+      email: ['', Validators.required],
+      comment: [],
     });
 
     this.subscription = this.myForm.statusChanges.subscribe(() =>
