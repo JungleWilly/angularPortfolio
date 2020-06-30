@@ -11,22 +11,7 @@
       />
       <mat-error *ngIf="errorsForm.name"> {{ errorsForm.name }} </mat-error>
     </mat-form-field>
-    <mat-form-field>
-      <mat-label>Phone Number :</mat-label>
-      <input
-        #input
-        formControlName="phone"
-        type="tel"
-        pattern="[0-9]{10}"
-        matInput
-        placeholder="Téléphone"
-      />
-      <span matSuffix> {{ input.value?.length || 0 }}/10 </span>
-      <!-- <mat-error *ngIf="errorsForm.phone"> {{ errorsForm.phone }} </mat-error> -->
-      <mat-error *ngIf="myForm.get('phone').hasError('pattern')">
-        Please Enter only number
-      </mat-error>
-    </mat-form-field>
+
     <mat-form-field>
       <mat-label>Email :</mat-label>
       <input
