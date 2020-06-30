@@ -1,8 +1,10 @@
 <div class="navbar" color="accent">
-  <div>
-    <h1>MyPortFolio</h1>
-    <button type="button" (click)="changeTheme('dark')">dark</button>
-    <button type="button" (click)="changeTheme('light')">light</button>
+  <div class="header-logo">
+    <a href="/" alt="header img">
+      <img src="../../assets/images/me.jpg" alt="" />
+    </a>
+    <!-- <button type="button" (click)="changeTheme('dark')">dark</button> -->
+    <!-- <button type="button" (click)="changeTheme('light')">light</button> -->
   </div>
 
   <ul class="nav-links">
@@ -35,11 +37,21 @@
     </li>
   </ul>
   <div class="switch-theme">
-    <div class="sun"></div>
-    <div class="toggle-wrapper">
-      <input id="switch" type="checkbox" />
-      <label id="toggle" for="switch">Toggle</label>
-    </div>
-    <div class="moon"></div>
+    <mat-button-toggle-group appearance="legacy" [(ngModel)]="selectedTheme">
+      <mat-button-toggle
+        value="light"
+        (click)="changeTheme()"
+        [class.active-theme]="selectedTheme === 'light' ? true : false"
+      >
+        <mat-icon>wb_sunny</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle
+        value="dark"
+        (click)="changeTheme()"
+        [class.active-theme]="selectedTheme === 'dark' ? true : false"
+      >
+        <mat-icon>brightness_2</mat-icon>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
   </div>
 </div>
