@@ -27,11 +27,22 @@ body {
 .color-scheme-light {
   @include angular-material-theme($light-theme);
   background: white;
+  color: rgb(78, 78, 78);
+  p,
+  a,
+  li {
+    color: rgb(78, 78, 78);
+  }
 }
 
 .color-scheme-dark {
   @include angular-material-theme($dark-theme);
-  background: black;
+  background: rgb(43, 42, 42);
+  color: white;
+  a,
+  li {
+    color: white;
+  }
 }
 
 * {
@@ -46,7 +57,6 @@ ul {
 
 a {
   text-decoration: none;
-  color: rgb(37, 37, 37);
 }
 
 p,

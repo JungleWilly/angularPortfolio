@@ -4,7 +4,7 @@
 }
 
 .project-title {
-  margin: 2rem;
+  margin: 2rem 0rem;
 }
 
 .project-list {
@@ -18,9 +18,9 @@
 }
 
 .project-card {
-  max-width: 40rem;
+  max-width: auto;
   margin: 2rem;
-  flex: 1 1 40rem;
+  flex: 1 1 50rem;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
@@ -35,7 +35,7 @@
       left: 0;
       background: rgba($color: #3a3a3a, $alpha: 0.5);
       width: 100%;
-      height: 35rem;
+      height: 100%;
       text-align: center;
     }
 
@@ -52,7 +52,7 @@
 
 .project-image {
   width: 100%;
-  height: 35rem;
+  min-height: 35rem;
   background-size: cover;
 }
 

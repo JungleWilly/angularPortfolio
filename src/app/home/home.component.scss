@@ -22,13 +22,12 @@ $gray-text: #2c2c2c;
   z-index: 1;
   @include flex(space-between, center, row);
   h2 {
-    font-size: 8rem;
+    font-size: 7rem;
     padding-top: 2rem;
-    z-index: 2;
-    display: inline-block;
+    margin-bottom: 2rem;
   }
   h3 {
-    font-size: 6rem;
+    font-size: 5rem;
     padding: 2rem 0rem;
     color: #38d39f;
   }
