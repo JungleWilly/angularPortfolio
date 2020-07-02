@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -17,7 +20,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
-const Material = [
+const MODULES = [
   MatToolbarModule,
   MatMenuModule,
   MatTabsModule,
@@ -34,11 +37,12 @@ const Material = [
   MatSlideToggleModule,
   MatTableModule,
   MatButtonToggleModule,
+  FlexLayoutModule,
 ];
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, ...Material],
-  exports: Material,
+  imports: [CommonModule, ...MODULES],
+  exports: [...MODULES],
 })
-export class MaterialModule {}
+export class LayoutModule {}

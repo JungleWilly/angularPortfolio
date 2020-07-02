@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ThemeService } from '../shared/service/theme.service';
+import { ThemeService } from '../../service/theme.service';
 
 @Component({
   selector: 'app-header',
