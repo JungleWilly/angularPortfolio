@@ -8,11 +8,15 @@ import { ThemeService } from '../shared/service/theme.service';
 })
 export class HeaderComponent implements OnInit {
   themes: string[];
-  selectedTheme = 'light';
+  selectedTheme: string;
 
   constructor(private theming: ThemeService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (localStorage.getItem('prefers-color')) {
+      this.selectedTheme = localStorage.getItem('prefers-color');
+    }
+  }
 
   changeTheme() {
     this.theming.update(this.selectedTheme);
