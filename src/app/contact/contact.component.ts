@@ -14,6 +14,8 @@ import { Observable, Subscription } from 'rxjs';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
+  public color: string = 'primary';
+
   myForm: FormGroup;
   subscription: Subscription;
 

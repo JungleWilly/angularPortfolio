@@ -66,6 +66,9 @@ $gray-text: #2c2c2c;
       text-align: center;
       border: 0;
       cursor: pointer;
+      border-radius: 5px;
+    }
+    &-link:hover {
       border-radius: 0;
     }
     .extrude-right {
@@ -76,6 +79,7 @@ $gray-text: #2c2c2c;
       width: 1.6rem;
       height: 78%;
       background-color: #37c797;
+
       transform: skew(0deg, -45deg);
       transform-origin: 100% 50%;
       transition: height 200ms ease, transform 200ms ease;
@@ -95,6 +99,7 @@ $gray-text: #2c2c2c;
       width: 80%;
       height: 1.6rem;
       background-color: #30b689;
+
       transform-origin: 50% 100% 0;
       transition: transform 200ms ease, width 200ms ease; //transform 200ms ease;
       &.alt {

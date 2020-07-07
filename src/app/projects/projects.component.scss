@@ -1,6 +1,10 @@
 .projects-container {
   width: 90%;
-  margin: auto;
+  min-height: 90vh;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin: 7rem auto;
 }
 
 .project-title {
@@ -25,31 +29,47 @@
   overflow: hidden;
   border-radius: 10px;
 
-  &:hover {
-    .hover-div {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: rgba($color: #3a3a3a, $alpha: 0.5);
-      width: 100%;
-      height: 100%;
-      text-align: center;
-    }
+  // &:hover {
+  //   .hover-div {
+  //     display: flex;
+  //     flex-direction: column;
+  //     justify-content: space-between;
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //     background: rgba($color: #3a3a3a, $alpha: 0.5);
+  //     width: 100%;
+  //     height: 100%;
+  //     text-align: center;
+  //   }
 
-    button {
-      width: 50%;
-      background: transparent;
-      color: #38d39f;
-      border: 1px solid #38d39f;
-      margin-bottom: 2rem;
-      cursor: pointer;
-    }
-  }
+  //   button {
+  //     width: 50%;
+  //     background: transparent;
+  //     color: #38d39f;
+  //     border: 1px solid #38d39f;
+  //     margin-bottom: 2rem;
+  //     cursor: pointer;
+  //   }
+  // }
 }
 
+.tab-content {
+  min-height: 10rem;
+}
+
+ul {
+  margin-top: 1rem;
+}
+
+.techno,
+.tool,
+.production {
+  padding: 0.5rem 1rem;
+  border: 2px solid #38d39f;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+}
 .project-image {
   width: 100%;
   min-height: 35rem;

@@ -4,7 +4,7 @@
   </div>
   <mat-form-field>
     <mat-label>
-      Search a project
+      Search a techno
     </mat-label>
     <input matInput type="text" [(ngModel)]="search" />
     <button
@@ -19,6 +19,68 @@
     </button>
   </mat-form-field>
   <div class="project-list">
+    <mat-card
+      class="project-card"
+      tabindex="0"
+      *ngFor="let project of projects | technoFilter: search; let i = index"
+    >
+      <mat-card-header>
+        <mat-card-title>{{ project.name }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="project.image" />
+      <mat-card-content class="tab-content">
+        <mat-tab-group mat-align-tabs="start" dynamicHeight>
+          <mat-tab label="Techno">
+            <ul fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
+              <li class="techno" *ngFor="let techno of project.techno">
+                {{ techno }}
+              </li>
+            </ul>
+          </mat-tab>
+          <mat-tab label="Tools">
+            <ul fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
+              <li class="tool" *ngFor="let tool of project.tools">
+                {{ tool }}
+              </li>
+            </ul>
+          </mat-tab>
+          <mat-tab label="Production">
+            <ul fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
+              <li
+                class="production"
+                *ngFor="let production of project.production"
+              >
+                {{ production }}
+              </li>
+            </ul>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button
+          mat-icon-button
+          [mat-dialog-close]="true"
+          matTooltip="View Code"
+          matTooltipPosition="before"
+          matTooltipClass="tooltip"
+          aria-label="Github code"
+        >
+          <mat-icon>code</mat-icon>
+        </button>
+
+        <button
+          mat-icon-button
+          [mat-dialog-close]="true"
+          matTooltip="Website"
+          matTooltipPosition="above"
+          aria-label="link button to the site"
+        >
+          <mat-icon>open_in_new</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- 
     <div
       class="project-card"
       *ngFor="let project of projects | filter: search; let i = index"
@@ -32,6 +94,6 @@
           <button mat-button (click)="openDialog(i)">Open dialog</button>
         </div>
       </div>
-    </div>
+    </div>-->
   </div>
 </section>

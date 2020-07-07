@@ -19,6 +19,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { ProjectService } from './shared/service/project.service';
 import { FilterPipe } from './shared/pipes/filter.pipe';
+import { TechnoFilterPipe } from './shared/pipes/techno-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { FilterPipe } from './shared/pipes/filter.pipe';
     ContactComponent,
     ProjectDetailsComponent,
     FilterPipe,
+    TechnoFilterPipe,
   ],
   imports: [
     BrowserModule,

@@ -7,8 +7,8 @@
 @include mat-core();
 
 // Light theme
-$light-primary: mat-palette($mat-indigo);
-$light-accent: mat-palette($mat-pink, A200, A100, A400);
+$light-primary: mat-palette($mat-teal, A700);
+$light-accent: mat-palette($mat-teal, 600);
 $light-theme: mat-light-theme($light-primary, $light-accent);
 
 // Dark theme
@@ -26,12 +26,15 @@ body {
 
 .color-scheme-light {
   @include angular-material-theme($light-theme);
-  background: white;
+  background: #f1f8ff;
   color: rgb(78, 78, 78);
   p,
   a,
   li {
     color: rgb(78, 78, 78);
+  }
+  .form-container {
+    background: white;
   }
 }
 
@@ -42,6 +45,9 @@ body {
   a,
   li {
     color: white;
+  }
+  .form-container {
+    background: #424242;
   }
 }
 
