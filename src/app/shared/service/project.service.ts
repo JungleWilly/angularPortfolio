@@ -14,7 +14,7 @@ export class ProjectService {
       'https://cdn.worldvectorlogo.com/logos/angular-icon.svg',
       ['Html', 'CSS/SASS', 'Javascript', 'Angular'],
       ['Webpack', 'Babel', 'Git', 'Github'],
-      ['netlify']
+      ['Netlify']
     ),
     new Project(
       'Blog',
@@ -22,7 +22,7 @@ export class ProjectService {
       'https://cdn.worldvectorlogo.com/logos/angular-icon.svg',
       ['Html', 'CSS/SASS', 'Javascript'],
       ['Webpack', 'Babel', 'Git', 'Github'],
-      ['netlify']
+      ['Netlify']
     ),
     new Project(
       'travelly',
@@ -30,7 +30,7 @@ export class ProjectService {
       'https://cdn.worldvectorlogo.com/logos/angular-icon.svg',
       ['Html', 'CSS/SASS', 'Javascript'],
       ['Webpack', 'Babel', 'Git', 'Github'],
-      ['netlify']
+      ['Netlify']
     ),
     new Project(
       'Cocktail-app',
@@ -38,7 +38,7 @@ export class ProjectService {
       'https://cdn.worldvectorlogo.com/logos/angular-icon.svg',
       ['Html', 'CSS/SASS', 'Javascript'],
       ['Webpack', 'Babel', 'Git', 'Github'],
-      ['netlify']
+      ['Netlify']
     ),
     new Project(
       'Cocktail-app',
@@ -46,7 +46,7 @@ export class ProjectService {
       'https://cdn.worldvectorlogo.com/logos/angular-icon.svg',
       ['Html', 'CSS/SASS', 'Javascript'],
       ['Webpack', 'Babel', 'Git', 'Github'],
-      ['netlify']
+      ['Netlify']
     ),
   ]);
 
