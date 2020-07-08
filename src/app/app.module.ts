@@ -20,6 +20,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 import { ProjectService } from './shared/service/project.service';
 import { FilterPipe } from './shared/pipes/filter.pipe';
 import { TechnoFilterPipe } from './shared/pipes/techno-filter.pipe';
+import { BorderDirective } from './shared/directives/border.directive';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { TechnoFilterPipe } from './shared/pipes/techno-filter.pipe';
     ProjectDetailsComponent,
     FilterPipe,
     TechnoFilterPipe,
+    BorderDirective,
   ],
   imports: [
     BrowserModule,

@@ -13,11 +13,14 @@ export class ProjectsComponent implements OnInit {
   projects: Project[];
   activeProject: number;
   search: string = '';
+  color: string;
 
   constructor(
     public dialog: MatDialog,
     private projectService: ProjectService
-  ) {}
+  ) {
+    this.color = 'yellow';
+  }
 
   ngOnInit(): void {
     this.projectService.projects.subscribe((projects: Project[]) => {
