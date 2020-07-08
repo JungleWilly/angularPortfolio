@@ -25,7 +25,9 @@
       *ngFor="let project of projects | technoFilter: search; let i = index"
     >
       <mat-card-header>
-        <mat-card-title>{{ project.name }}</mat-card-title>
+        <mat-card-title
+          ><strong>{{ project.name }}</strong></mat-card-title
+        >
       </mat-card-header>
       <img mat-card-image [src]="project.image" />
       <mat-card-content class="tab-content">

@@ -9,42 +9,30 @@ import { HttpClient } from '@angular/common/http';
 export class ProjectService {
   public projects: BehaviorSubject<Project[]> = new BehaviorSubject([
     new Project(
-      'Cocktail-app',
+      'Blog',
       '../../../assets/images/blog.png',
-      'https://cdn.worldvectorlogo.com/logos/angular-icon.svg',
       ['Html', 'CSS/SASS', 'Javascript', 'Angular'],
       ['Webpack', 'Babel', 'Git', 'Github'],
       ['Netlify']
     ),
     new Project(
-      'Blog',
-      '../../../assets/images/blog.png',
-      'https://cdn.worldvectorlogo.com/logos/angular-icon.svg',
-      ['Html', 'CSS/SASS', 'Javascript'],
-      ['Webpack', 'Babel', 'Git', 'Github'],
-      ['Netlify']
-    ),
-    new Project(
-      'travelly',
+      'Le Journal du Lundi',
       '../../../assets/images/medium.png',
-      'https://cdn.worldvectorlogo.com/logos/angular-icon.svg',
       ['Html', 'CSS/SASS', 'Javascript'],
       ['Webpack', 'Babel', 'Git', 'Github'],
       ['Netlify']
     ),
     new Project(
-      'Cocktail-app',
-      'https://images.unsplash.com/photo-1592320937521-84c88747a68a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80',
-      'https://cdn.worldvectorlogo.com/logos/angular-icon.svg',
-      ['Html', 'CSS/SASS', 'Javascript'],
+      'Travelly',
+      '../../../assets/images/Travelly.jpg',
+      ['Html', 'CSS/SASS'],
       ['Webpack', 'Babel', 'Git', 'Github'],
       ['Netlify']
     ),
     new Project(
-      'Cocktail-app',
-      'https://images.unsplash.com/photo-1592320937521-84c88747a68a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80',
-      'https://cdn.worldvectorlogo.com/logos/angular-icon.svg',
-      ['Html', 'CSS/SASS', 'Javascript'],
+      'Agence Ledor',
+      '../../../assets/images/ledor.jpg',
+      ['Html', 'CSS/SASS'],
       ['Webpack', 'Babel', 'Git', 'Github'],
       ['Netlify']
     ),
