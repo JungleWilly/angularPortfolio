@@ -18,9 +18,7 @@ export class ProjectsComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private projectService: ProjectService
-  ) {
-    this.color = 'yellow';
-  }
+  ) {}
 
   ngOnInit(): void {
     this.projectService.projects.subscribe((projects: Project[]) => {

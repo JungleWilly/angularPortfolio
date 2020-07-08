@@ -29,19 +29,33 @@
           ><strong>{{ project.name }}</strong></mat-card-title
         >
       </mat-card-header>
+      <mat-divider></mat-divider>
       <img mat-card-image [src]="project.image" />
       <mat-card-content class="tab-content">
         <mat-tab-group mat-align-tabs="start" dynamicHeight>
+          <mat-tab *ngIf="project.frameworks" label="Framework">
+            <ul fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
+              <li
+                class="techno {{ framework }}"
+                *ngFor="let framework of project.frameworks"
+              >
+                {{ framework }}
+              </li>
+            </ul>
+          </mat-tab>
           <mat-tab label="Techno">
             <ul fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
-              <li class="techno" *ngFor="let techno of project.techno">
+              <li
+                class="techno {{ techno }}"
+                *ngFor="let techno of project.techno"
+              >
                 {{ techno }}
               </li>
             </ul>
           </mat-tab>
           <mat-tab label="Tools">
             <ul fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
-              <li class="tool" *ngFor="let tool of project.tools">
+              <li class="tool {{ tool }}" *ngFor="let tool of project.tools">
                 {{ tool }}
               </li>
             </ul>
@@ -49,7 +63,7 @@
           <mat-tab label="Production">
             <ul fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
               <li
-                class="production"
+                class="production {{ production }}"
                 *ngFor="let production of project.production"
               >
                 {{ production }}
@@ -61,23 +75,33 @@
       <mat-card-actions align="end">
         <button
           mat-icon-button
-          [mat-dialog-close]="true"
           matTooltip="View Code"
           matTooltipPosition="before"
           matTooltipClass="tooltip"
           aria-label="Github code"
         >
-          <mat-icon>code</mat-icon>
+          <a
+            href="{{ project.githubLink }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <mat-icon>code</mat-icon>
+          </a>
         </button>
 
         <button
           mat-icon-button
-          [mat-dialog-close]="true"
           matTooltip="Website"
           matTooltipPosition="above"
           aria-label="link button to the site"
         >
-          <mat-icon>open_in_new</mat-icon>
+          <a
+            href="{{ project.websiteLink }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <mat-icon>open_in_new</mat-icon>
+          </a>
         </button>
       </mat-card-actions>
     </mat-card>

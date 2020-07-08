@@ -1,3 +1,5 @@
+// container
+
 .projects-container {
   width: 90%;
   min-height: 90vh;
@@ -7,18 +9,16 @@
   margin: 7rem auto;
 }
 
+// title
 .project-title {
   margin: 2rem 0rem;
 }
 
+// project-list container
 .project-list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-}
-
-.hover-div {
-  display: none;
 }
 
 .project-card {
@@ -66,17 +66,67 @@ ul {
 .tool,
 .production {
   padding: 0.5rem 1rem;
-  border: 2px solid #38d39f;
+  border: 2px solid;
   border-radius: 0.5rem;
   font-size: 1.5rem;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
-.project-image {
-  width: 100%;
-  min-height: 35rem;
-  background-size: cover;
+.mat-card-image {
+  min-height: 33.4rem;
 }
 
 mat-form-field.mat-form-field {
   font-size: 2rem;
   width: 100%;
+}
+
+// Frameworks classes
+
+.Angular {
+  border-color: #bd002e;
+}
+
+// tech classes
+.HTML {
+  border-color: orange;
+}
+
+.CSS {
+  border-color: rgb(64, 98, 250);
+}
+
+.Javascript {
+  border-color: #fddc22;
+}
+
+.Typescript {
+  border-color: #007acc;
+}
+
+// tools classes
+
+.Webpack {
+  border-color: #3276bd;
+}
+
+.Babel {
+  border-color: #f2d53c;
+}
+
+.Git {
+  border-color: #e94f31;
+}
+
+.Github {
+  border-color: #323131;
+}
+
+.Firebase {
+  border-color: #f6830e;
+}
+
+// production classes
+.Netlify {
+  border-color: #34b2bb;
 }
