@@ -32,7 +32,7 @@
       <mat-divider></mat-divider>
       <img mat-card-image [src]="project.image" />
       <mat-card-content class="tab-content">
-        <mat-tab-group mat-align-tabs="start" dynamicHeight>
+        <mat-tab-group mat-stretch-tabs mat-align-tabs="start" dynamicHeight>
           <mat-tab *ngIf="project.frameworks" label="Framework">
             <ul fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
               <li

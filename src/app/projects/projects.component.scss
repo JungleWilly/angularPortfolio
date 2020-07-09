@@ -76,6 +76,13 @@ ul {
   min-height: 33.4rem;
 }
 
+::ng-deep.mat-tab-label,
+::ng-deep.mat-tab-label-active {
+  min-width: 0 !important;
+  padding: 3px !important;
+  margin: 3px !important;
+}
+
 mat-form-field.mat-form-field {
   font-size: 2rem;
   width: 100%;
