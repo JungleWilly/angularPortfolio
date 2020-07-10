@@ -1,5 +1,10 @@
-<section class="intro" fxLayout="row" fxLayoutAlign="space-between, center">
-  <form class="form-container" novalidate [formGroup]="myForm">
+<section
+  class="intro"
+  fxLayout="row"
+  fxLayoutAlign="space-between, center"
+  @contactAnim
+>
+  <form class="form-container anim-contact" novalidate [formGroup]="myForm">
     <div>
       <h2>Contact</h2>
     </div>
@@ -47,7 +52,7 @@
       <span>Send</span>
     </button>
   </form>
-  <div class="intro-images">
+  <div class="intro-images anim-contact">
     <svg
       width="600"
       height="596"

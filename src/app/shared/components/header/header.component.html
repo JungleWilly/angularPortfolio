@@ -1,13 +1,11 @@
-<div class="navbar" color="accent">
-  <div class="header-logo">
+<div class="navbar" color="accent" @headerAnim>
+  <div class="header-logo anim">
     <a href="/" alt="header img">
       <img src="../../assets/images/me.jpg" alt="" />
     </a>
-    <!-- <button type="button" (click)="changeTheme('dark')">dark</button> -->
-    <!-- <button type="button" (click)="changeTheme('light')">light</button> -->
   </div>
 
-  <ul class="nav-links">
+  <ul class="nav-links anim">
     <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
       <a routerLink="/home">Home</a>
     </li>
@@ -36,7 +34,7 @@
       >
     </li>
   </ul>
-  <div class="switch-theme">
+  <div class="switch-theme anim">
     <mat-button-toggle-group appearance="legacy" [(ngModel)]="selectedTheme">
       <mat-button-toggle
         value="light"

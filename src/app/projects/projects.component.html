@@ -1,8 +1,8 @@
 <section class="projects-container">
-  <div class="project-title">
+  <div class="project-title" @fade>
     <h2>My Projects</h2>
   </div>
-  <mat-form-field>
+  <mat-form-field @fade>
     <mat-label>
       Search a techno
     </mat-label>
@@ -18,7 +18,7 @@
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
-  <div class="project-list">
+  <div class="project-list" [@listAnimations]="projects.length">
     <mat-card
       class="project-card"
       tabindex="0"
@@ -105,21 +105,5 @@
         </button>
       </mat-card-actions>
     </mat-card>
-
-    <!-- 
-    <div
-      class="project-card"
-      *ngFor="let project of projects | filter: search; let i = index"
-    >
-      <img class="project-image" src="{{ project.image }}" alt="" />
-      <div class="hover-div">
-        <div>
-          <p>{{ project.name }}</p>
-        </div>
-        <div>
-          <button mat-button (click)="openDialog(i)">Open dialog</button>
-        </div>
-      </div>
-    </div>-->
   </div>
 </section>
