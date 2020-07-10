@@ -24,13 +24,13 @@
       tabindex="0"
       *ngFor="let project of projects | technoFilter: search; let i = index"
     >
+      <img mat-card-image [src]="project.image" />
+
       <mat-card-header>
         <mat-card-title
           ><strong>{{ project.name }}</strong></mat-card-title
         >
       </mat-card-header>
-      <mat-divider></mat-divider>
-      <img mat-card-image [src]="project.image" />
       <mat-card-content class="tab-content">
         <mat-tab-group mat-stretch-tabs mat-align-tabs="start" dynamicHeight>
           <mat-tab *ngIf="project.frameworks" label="Framework">

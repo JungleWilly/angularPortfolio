@@ -150,15 +150,14 @@ $gray-text: #2c2c2c;
 
 #plant-left {
   animation: plant 2s ease infinite alternate;
+  transform-origin: bottom;
+  transform-box: fill-box;
 }
 
 #plant-right {
   animation: plant 2s ease infinite alternate 0.5s;
-}
-
-#me {
-  animation: me 2s ease infinite alternate;
   transform-origin: bottom;
+  transform-box: fill-box;
 }
 
 #clock-arrow {
@@ -167,29 +166,11 @@ $gray-text: #2c2c2c;
   transform-origin: bottom;
 }
 
-@keyframes me {
+@keyframes plant {
   from {
     transform: rotateZ(-2deg);
   }
   to {
     transform: rotateZ(2deg);
-  }
-}
-
-@keyframes plant {
-  from {
-    transform: translateY(0%);
-  }
-  to {
-    transform: translateY(-30%);
-  }
-}
-
-@keyframes clock {
-  from {
-    transform: rotateZ(0deg);
-  }
-  to {
-    transform: rotateZ(360deg);
   }
 }
