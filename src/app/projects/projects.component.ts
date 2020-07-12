@@ -5,50 +5,14 @@ import { ProjectDetailsComponent } from '../project-details/project-details.comp
 import { ProjectService } from '../shared/service/project.service';
 
 import { fade } from '../shared/animations/fade';
-
-import {
-  query,
-  transition,
-  trigger,
-  style,
-  stagger,
-  animate,
-  keyframes,
-} from '@angular/animations';
+import { projectListAnimation } from '../shared/animations/project-list-animation';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
-  animations: [
-    fade,
-    trigger('listAnimations', [
-      transition('* => *', [
-        query(':enter', style({ opacity: '0' }), { optional: true }),
-        query(
-          ':enter',
-          stagger('300ms', [
-            animate(
-              '1s 1.2s ease-in',
-              keyframes([
-                style({
-                  opacity: 0,
-                  transform: 'translateY(-75px)',
-                  offset: 0,
-                }),
-                style({
-                  opacity: 0.5,
-                  transform: 'translateY(35px)',
-                  offset: 0.3,
-                }),
-                style({ opacity: 1, transform: 'translateY(0)', offset: 1 }),
-              ])
-            ),
-          ])
-        ),
-      ]),
-    ]),
-  ],
+  animations: [fade],
+  host: { '[@fade]': '' },
 })
 export class ProjectsComponent implements OnInit {
   projects: Project[];

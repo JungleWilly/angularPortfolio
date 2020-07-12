@@ -7,38 +7,14 @@ import {
 } from '@angular/forms';
 
 import { Observable, Subscription } from 'rxjs';
-import {
-  trigger,
-  query,
-  style,
-  transition,
-  stagger,
-  animate,
-} from '@angular/animations';
+
+import { contactAnimation } from '../shared/animations/contact-animation';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
-  animations: [
-    trigger('contactAnim', [
-      transition(':enter', [
-        query(
-          '.anim-contact',
-          style({ opacity: 0, transform: 'translateY(100%)' })
-        ),
-        query(
-          '.anim-contact',
-          stagger('-400ms', [
-            animate(
-              '600ms 1s ease-out',
-              style({ opacity: 1, transform: 'translateY(0)' })
-            ),
-          ])
-        ),
-      ]),
-    ]),
-  ],
+  animations: [contactAnimation],
 })
 export class ContactComponent implements OnInit {
   public color: string = 'primary';

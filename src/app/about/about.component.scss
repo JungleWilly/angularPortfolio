@@ -11,6 +11,10 @@ h2 {
   line-height: 3;
 }
 
+h3 {
+  color: #38d39f;
+}
+
 .section {
   display: flex;
   padding: 5rem 0;
@@ -37,6 +41,7 @@ h2 {
 }
 
 .skills {
+  width: 100%;
   &-title {
     text-align: left;
     min-width: 20rem;
@@ -58,7 +63,8 @@ h4 {
   font-size: 2rem;
 }
 
-.certification {
+.certification,
+.skills {
   width: 100%;
   &-title {
     max-width: 20rem;
@@ -77,4 +83,21 @@ h4 {
 
 table {
   width: 100%;
+}
+
+.skills-title {
+  text-align: left;
+}
+
+td.mat-cell {
+  width: 26.8rem;
+}
+
+.mat-header-cell {
+  font-size: 1.7rem;
+}
+
+.mat-cell,
+.mat-footer-cell {
+  font-size: 1.6rem;
 }

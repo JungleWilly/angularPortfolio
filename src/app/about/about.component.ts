@@ -1,20 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { fade } from '../shared/animations/fade';
 
-interface PeriodicElement {
+interface Certification {
   name: string;
   year: number;
   link: string;
+}
+
+interface Skills {
+  languages: string;
+  framework: string;
+  tools: string;
 }
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
+  animations: [fade],
+  host: { '[@fade]': '' },
 })
 export class AboutComponent implements OnInit {
-  displayedColumns: string[] = ['year', 'name', 'link'];
+  certificationDisplayedColumns: string[] = ['year', 'name', 'link'];
+  skillsDisplayedColumns: string[] = ['languages', 'framework', 'tools'];
 
-  ELEMENT_DATA: PeriodicElement[] = [
+  CERTIFICATION_ELEMENT_DATA: Certification[] = [
     {
       year: 2020,
       name: 'Angular',
@@ -41,7 +51,31 @@ export class AboutComponent implements OnInit {
     },
   ];
 
-  dataSource = this.ELEMENT_DATA;
+  SKILLS_ELEMENT_DATA: Skills[] = [
+    {
+      languages: 'TypeScript',
+      framework: 'Angular',
+      tools: 'Git / Github',
+    },
+    {
+      languages: 'Javascript (ES6)',
+      framework: '',
+      tools: 'Bash',
+    },
+    {
+      languages: 'CSS3 / SASS',
+      framework: '',
+      tools: 'Chrome DevTool',
+    },
+    {
+      languages: 'HTML5',
+      framework: '',
+      tools: '',
+    },
+  ];
+
+  certificationDataSource = this.CERTIFICATION_ELEMENT_DATA;
+  skillsDataSource = this.SKILLS_ELEMENT_DATA;
 
   constructor() {}
 

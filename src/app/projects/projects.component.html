@@ -1,8 +1,8 @@
-<section class="projects-container">
-  <div class="project-title" @fade>
+<section class="projects-container" @fade>
+  <div class="project-title">
     <h2>My Projects</h2>
   </div>
-  <mat-form-field @fade>
+  <mat-form-field>
     <mat-label>
       Search a techno
     </mat-label>
@@ -18,7 +18,7 @@
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
-  <div class="project-list" [@listAnimations]="projects.length">
+  <div class="project-list">
     <mat-card
       class="project-card"
       tabindex="0"

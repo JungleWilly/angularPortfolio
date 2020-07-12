@@ -35,31 +35,64 @@ import {
 
 // Angular documentation
 
-export const slideInAnimation = trigger('routeAnimations', [
-  transition('HomePage => ProjectPage', [
-    query(
-      ':enter, :leave',
-      [
-        style({
-          position: 'absolute',
-          left: 0,
-          width: '100%',
-          opacity: 0,
-        }),
-      ],
-      { optional: true }
-    ),
+// export const fader = trigger('routeAnimations', [
+//   transition('HomePage => ProjectsPage', [
+//     // Set a default  style for enter and leave
+//     query(
+//       ':enter',
+//       [
+//         style({
+//           opacity: 0,
+//         }),
+//       ],
+//       { optional: true }
+//     ),
+//     query(
+//       ' :leave',
+//       [
+//         style({
+//           opacity: 1,
+//         }),
+//       ],
+//       { optional: true }
+//     ),
+//     // Animate the new page in
+//     group([
+//       query(':enter', [animate('600ms ease', style({ opacity: 1 }))], {
+//         optional: true,
+//       }),
+//       query(':leave', [animate('1000ms ease', style({ opacity: 0 }))], {
+//         optional: true,
+//       }),
+//     ]),
+//   ]),
+// ]);
 
-    query(':enter', style({ opacity: 0 }), { optional: true }),
-    query(':leave', style({ opacity: 1 }), { optional: true }),
+// transition('HomePage <=> AboutPage', [
+//   query(
+//     ':enter, :leave',
+//     [
+//       style({
+//         position: 'absolute',
+//         left: 0,
+//         width: '100%',
+//         opacity: 0,
+//       }),
+//     ],
+//     { optional: true }
+//   ),
 
-    group([
-      query(':leave', [animate('1s ease', style({ opacity: 0 }))], {
-        optional: true,
-      }),
-      query(':enter', [animate('1s ease-in', style({ opacity: 1 })), ,], {
-        optional: true,
-      }),
-    ]),
-  ]),
-]);
+//   query(':enter', style({ opacity: 0 }), { optional: true }),
+//   query(':leave', style({ opacity: 1 }), { optional: true }),
+
+//   group([
+//     query(':leave', [animate('1s ease', style({ opacity: 0 }))], {
+//       optional: true,
+//     }),
+//     query(':enter', [animate('1s ease-in', style({ opacity: 1 }))], {
+//       optional: true,
+//     }),
+//     query(':leave', animateChild(), { optional: true }),
+//     query(':enter', animateChild(), { optional: true }),
+//   ]),
+// ]),
