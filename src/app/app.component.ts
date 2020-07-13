@@ -1,25 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeService } from './shared/service/theme.service';
+import {
+  trigger,
+  transition,
+  query,
+  style,
+  animate,
+} from '@angular/animations';
 import { RouterOutlet } from '@angular/router';
-import // slider,
-// transformer,
-// fader,
-// stepper,
-// slideInAnimation,
-'./shared/animations/route-animations';
-
-import { headerAnim } from './shared/animations/header-animation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
-    // fader,
-    //slider,
-    //transformer,
-    //stepper,
-    // slideInAnimation,
+    trigger('routeAnimation', [
+      transition(
+        'HomePage <=> ProjectsPage, HomePage <=> AboutPage, HomePage <=> ContactPage, ProjectsPage <=> AboutPage, ProjectsPage <=> ContactPage, AboutPage <=> ContactPage',
+        [
+          style({ height: '!' }),
+          query(':enter', style({ opacity: 0 })),
+          query(
+            ':enter, :leave',
+            style({
+              position: 'absolute',
+              top: '0',
+              left: '0',
+              right: '0',
+              bottom: '0',
+            })
+          ),
+
+          query(':leave', [animate('0.4s ease', style({ opacity: 0 }))]),
+          query(':enter', [animate('0.4s ease', style({ opacity: 1 }))]),
+        ]
+      ),
+    ]),
   ],
 })
 export class AppComponent implements OnInit {
@@ -27,13 +43,12 @@ export class AppComponent implements OnInit {
     this.themeService.load();
   }
 
-  // prepareRoute(outlet: RouterOutlet) {
-  //   return (
-  //     outlet &&
-  //     outlet.activatedRouteData &&
-  //     outlet.activatedRouteData['animation']
-  //   );
-  // }
-
+  prepareRoute(outlet: RouterOutlet) {
+    return (
+      outlet &&
+      outlet.activatedRouteData &&
+      outlet.activatedRouteData['animation']
+    );
+  }
   ngOnInit() {}
 }

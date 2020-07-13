@@ -1,4 +1,55 @@
-div {
-  background: red;
-  height: 10vh;
+footer {
+  background: #00897b;
+  height: 20vh;
+  color: white;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  a {
+    color: white;
+  }
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.link,
+.social {
+  flex: 1 1 20rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  width: 30%;
+
+  h4 {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.link {
+  margin-right: 5rem;
+}
+.social {
+  margin-left: 5rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.social-links {
+  justify-content: flex-start;
+  li {
+    margin: 0 2rem 0 0;
+  }
 }

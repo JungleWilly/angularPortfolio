@@ -4,15 +4,10 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ProjectDetailsComponent } from '../project-details/project-details.component';
 import { ProjectService } from '../shared/service/project.service';
 
-import { fade } from '../shared/animations/fade';
-import { projectListAnimation } from '../shared/animations/project-list-animation';
-
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
-  animations: [fade],
-  host: { '[@fade]': '' },
 })
 export class ProjectsComponent implements OnInit {
   projects: Project[];

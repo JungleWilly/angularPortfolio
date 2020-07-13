@@ -8,13 +8,10 @@ import {
 
 import { Observable, Subscription } from 'rxjs';
 
-import { contactAnimation } from '../shared/animations/contact-animation';
-
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
-  animations: [contactAnimation],
 })
 export class ContactComponent implements OnInit {
   public color: string = 'primary';

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { fade } from '../shared/animations/fade';
 
 interface Certification {
   name: string;
@@ -17,8 +16,6 @@ interface Skills {
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
-  animations: [fade],
-  host: { '[@fade]': '' },
 })
 export class AboutComponent implements OnInit {
   certificationDisplayedColumns: string[] = ['year', 'name', 'link'];

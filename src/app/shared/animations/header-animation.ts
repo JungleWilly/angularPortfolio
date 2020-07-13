@@ -8,11 +8,11 @@ import {
 } from '@angular/animations';
 
 export const headerAnim = trigger('headerAnim', [
-  transition('* => *', [
+  transition(':enter', [
     query(' .anim', style({ opacity: '0', transform: 'translateX(-100%)' })),
     query(
       '.anim',
-      stagger('500ms', [
+      stagger('400ms', [
         animate(
           '600ms ease-out',
           style({ opacity: 1, transform: 'translateX(0)' })
