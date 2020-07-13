@@ -5,8 +5,9 @@
     [formGroup]="myForm"
     name="contact"
     method="POST"
-    data-netlify="true"
+    (ngSubmit)="onSubmit()"
   >
+    <input type="hidden" name="form-name" value="contact" />
     <div>
       <h2>Contact</h2>
     </div>

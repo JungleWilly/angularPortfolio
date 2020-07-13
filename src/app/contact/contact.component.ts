@@ -8,6 +8,12 @@ import {
 
 import { Observable, Subscription } from 'rxjs';
 
+import {
+  HttpClient,
+  HttpParams,
+  HttpErrorResponse,
+} from '@angular/common/http';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -19,7 +25,7 @@ export class ContactComponent implements OnInit {
   myForm: FormGroup;
   subscription: Subscription;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     this.createForm();
   }
 
@@ -72,4 +78,36 @@ export class ContactComponent implements OnInit {
       invalid: 'Rentrez une adresse email valide.',
     },
   };
+
+  onSubmit() {
+    const body = new HttpParams()
+      .set('form-name', 'contact')
+      .append('name', this.myForm.value.name)
+      .append('email', this.myForm.value.email)
+      .append('message', this.myForm.value.comment);
+
+    this.http
+      .post('/', body.toString(), {
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      })
+      .subscribe(
+        (res) => {},
+        (err) => {
+          if (err instanceof ErrorEvent) {
+            alert('Something went wrong when sending your message.');
+            console.log(err.error.message);
+          } else {
+            if (err.status === 200) {
+              alert(' Your message has been sent!');
+            } else {
+              alert('Something went wrong when sending your message.');
+              console.log('Error status:');
+              console.log(err.status);
+              console.log('Error body:');
+              console.log(err.error);
+            }
+          }
+        }
+      );
+  }
 }

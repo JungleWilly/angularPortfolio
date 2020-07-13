@@ -18,5 +18,16 @@
   </head>
   <body>
     <app-root></app-root>
+    <form
+      name="contact"
+      subject="A Message From Personal Website"
+      netlify
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
   </body>
 </html>
