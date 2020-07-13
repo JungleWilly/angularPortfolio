@@ -1,5 +1,12 @@
 <section class="intro" fxLayout="row" fxLayoutAlign="space-between, center">
-  <form class="form-container anim-contact" novalidate [formGroup]="myForm">
+  <form
+    class="form-container anim-contact"
+    novalidate
+    [formGroup]="myForm"
+    name="contact"
+    method="POST"
+    data-netlify="true"
+  >
     <div>
       <h2>Contact</h2>
     </div>
@@ -32,6 +39,7 @@
     <mat-form-field class="example-full-width">
       <mat-label>Leave a comment</mat-label>
       <textarea
+        name="message"
         formControlName="comment"
         matInput
         placeholder="Ex. I want to work with you because..."
