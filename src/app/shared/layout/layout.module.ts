@@ -19,6 +19,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 const MODULES = [
   MatToolbarModule,
@@ -38,6 +39,7 @@ const MODULES = [
   MatTableModule,
   MatButtonToggleModule,
   FlexLayoutModule,
+  MatCheckboxModule,
 ];
 
 @NgModule({

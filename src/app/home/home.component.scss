@@ -16,7 +16,7 @@ $gray-text: #2c2c2c;
 
 .intro {
   min-height: 90vh;
-  width: 90%;
+  max-width: 90%;
   margin: 2rem auto;
   flex-wrap: wrap;
   z-index: 1;
@@ -33,6 +33,25 @@ $gray-text: #2c2c2c;
   }
   p {
     padding-top: 2rem;
+  }
+
+  .text-lt-md {
+    h2 {
+      font-size: 6rem;
+    }
+
+    h3 {
+      font-size: 4rem;
+    }
+  }
+  .text-xs {
+    h2 {
+      font-size: 6rem;
+    }
+
+    h3 {
+      font-size: 5rem;
+    }
   }
 }
 
@@ -143,7 +162,13 @@ $gray-text: #2c2c2c;
   flex: 1 1 40rem;
 }
 
-.intro-images svg {
-  width: 100%;
-  padding-left: 5rem;
+.intro-images {
+  img {
+    width: 100%;
+    padding-left: 5rem;
+  }
+}
+
+.image-xs img {
+  padding: 2rem 0 0 0;
 }

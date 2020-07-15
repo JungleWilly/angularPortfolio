@@ -18,6 +18,8 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { ProjectService } from './shared/service/project.service';
+import { SidenavService } from './shared/service/sidenav.service';
+
 import { FilterPipe } from './shared/pipes/filter.pipe';
 import { TechnoFilterPipe } from './shared/pipes/techno-filter.pipe';
 
@@ -44,7 +46,7 @@ import { TechnoFilterPipe } from './shared/pipes/techno-filter.pipe';
     AppRoutingModule,
   ],
   entryComponents: [ProjectDetailsComponent],
-  providers: [ProjectService],
+  providers: [ProjectService, SidenavService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

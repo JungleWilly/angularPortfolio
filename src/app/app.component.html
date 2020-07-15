@@ -1,12 +1,67 @@
-<app-header></app-header>
-<div
-  id="page"
-  class="routeContainer"
-  [@routeAnimation]="prepareRoute(myOutlet)"
->
-  <router-outlet #myOutlet="outlet"></router-outlet>
-</div>
+<mat-sidenav-container>
+  <mat-sidenav color="accent" mode="over" #sidenav>
+    <ul class="nav-links anim">
+      <li>
+        <a
+          routerLink="/home"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="toggleSideNav()"
+        >
+          <div class="example-button-container">
+            <button
+              mat-fab
+              color="primary"
+              aria-label="Example icon button with a delete icon"
+            >
+              <mat-icon inline="true">delete</mat-icon>
+            </button>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="/projects"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="toggleSideNav()"
+        >
+          <mat-icon inline="true">view_list</mat-icon>
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="/about"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="toggleSideNav()"
+        >
+          <mat-icon inline="true">account_circle</mat-icon>
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="/contact"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="toggleSideNav()"
+        >
+          <mat-icon inline="true">chat</mat-icon>
+        </a>
+      </li>
+    </ul>
+  </mat-sidenav>
+  <app-header></app-header>
+  <div
+    id="page"
+    class="routeContainer"
+    [@routeAnimation]="prepareRoute(myOutlet)"
+  >
+    <router-outlet #myOutlet="outlet"></router-outlet>
+  </div>
 
-<div class="footer">
-  <app-footer></app-footer>
-</div>
+  <div class="footer">
+    <app-footer></app-footer>
+  </div>
+</mat-sidenav-container>
+<p></p>

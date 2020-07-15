@@ -2,6 +2,8 @@
 
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
+// Light and Dark Theme Setting
+
 // Imports for Angular Material Theming
 @import "~@angular/material/theming";
 @include mat-core();
@@ -17,12 +19,7 @@ $dark-accent: mat-palette($mat-amber, A200, A100, A400);
 $dark-warn: mat-palette($mat-deep-orange);
 $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
-html,
-body {
-  font-size: 62.5%;
-  font-family: "Montserrat", sans-serif;
-  line-height: 1.5;
-}
+// Light theme
 
 .color-scheme-light {
   @include angular-material-theme($light-theme);
@@ -38,6 +35,8 @@ body {
   }
 }
 
+// Dark theme
+
 .color-scheme-dark {
   @include angular-material-theme($dark-theme);
   background: rgb(43, 42, 42);
@@ -51,17 +50,20 @@ body {
   }
 }
 
+// General
+
+html,
+body {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  max-width: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-router-outlet {
-  display: none;
-}
-
-.routeContainer {
-  position: relative;
 }
 
 ul {
@@ -83,4 +85,37 @@ h2 {
 
 h3 {
   font-size: 3rem;
+}
+
+// class for route animation
+
+router-outlet {
+  display: none;
+}
+
+.routeContainer {
+  position: relative;
+}
+
+// class for media querie
+
+.hide-svg {
+  display: none;
+}
+
+.mat-sidenav {
+  .mat-drawer-inner-container {
+    background-color: #00897b;
+  }
+
+  a .mat-icon {
+    font-size: 4rem;
+    color: white;
+  }
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
 }

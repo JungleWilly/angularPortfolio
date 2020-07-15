@@ -1,55 +1,88 @@
-<div class="navbar" color="accent" @headerAnim>
-  <div class="header-logo anim" id="top">
-    <!-- <a href="/" alt="header img">
-      <img src="../../assets/images/me.jpg" alt="" />
-    </a> -->
+<header>
+  <div class="navbar" color="accent" @headerAnim fxHide.xs fxHide.sm>
+    <ul class="nav-links anim" fxLayout.xs="column" fxLayout.sm="column">
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a routerLink="/home">Home</a>
+      </li>
+      <li>
+        <a
+          routerLink="/projects"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Projects</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/about"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >About</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/contact"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Contact</a
+        >
+      </li>
+    </ul>
+    <div class="switch-theme anim">
+      <mat-button-toggle-group appearance="legacy" [(ngModel)]="selectedTheme">
+        <mat-button-toggle
+          value="light"
+          (click)="changeTheme()"
+          [class.active-theme]="selectedTheme === 'light' ? true : false"
+        >
+          <mat-icon>wb_sunny</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle
+          value="dark"
+          (click)="changeTheme()"
+          [class.active-theme]="selectedTheme === 'dark' ? true : false"
+        >
+          <mat-icon>brightness_2</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
   </div>
 
-  <ul class="nav-links anim">
-    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-      <a routerLink="/home">Home</a>
-    </li>
-    <li>
-      <a
-        routerLink="/projects"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Projects</a
+  <mat-toolbar
+    color="primary"
+    fxHide
+    fxShow.sm
+    fxShow.xs
+    class="mat-elevation-z2"
+  >
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon inline="true" class="toggleMenu" (click)="toggleSideNav()"
+        >menu</mat-icon
       >
-    </li>
-    <li>
-      <a
-        routerLink="/about"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >About</a
-      >
-    </li>
-    <li>
-      <a
-        routerLink="/contact"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Contact</a
-      >
-    </li>
-  </ul>
-  <div class="switch-theme anim">
-    <mat-button-toggle-group appearance="legacy" [(ngModel)]="selectedTheme">
-      <mat-button-toggle
-        value="light"
-        (click)="changeTheme()"
-        [class.active-theme]="selectedTheme === 'light' ? true : false"
-      >
-        <mat-icon>wb_sunny</mat-icon>
-      </mat-button-toggle>
-      <mat-button-toggle
-        value="dark"
-        (click)="changeTheme()"
-        [class.active-theme]="selectedTheme === 'dark' ? true : false"
-      >
-        <mat-icon>brightness_2</mat-icon>
-      </mat-button-toggle>
-    </mat-button-toggle-group>
-  </div>
-</div>
+    </button>
+    <span fxFlex="auto"></span>
+    <div class="switch-theme anim">
+      <mat-button-toggle-group appearance="legacy" [(ngModel)]="selectedTheme">
+        <mat-button-toggle
+          value="light"
+          (click)="changeTheme()"
+          [class.active-theme]="selectedTheme === 'light' ? true : false"
+        >
+          <mat-icon>wb_sunny</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle
+          value="dark"
+          (click)="changeTheme()"
+          [class.active-theme]="selectedTheme === 'dark' ? true : false"
+        >
+          <mat-icon>brightness_2</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </mat-toolbar>
+</header>

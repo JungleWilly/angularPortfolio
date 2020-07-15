@@ -1,6 +1,7 @@
 footer {
   background: #00897b;
   height: 15vh;
+  min-width: 100%;
   color: white;
   display: flex;
   flex-flow: row nowrap;
@@ -12,7 +13,7 @@ footer {
 }
 
 .container {
-  width: 90%;
+  min-width: 90%;
   margin: auto;
   display: flex;
   flex-flow: row nowrap;

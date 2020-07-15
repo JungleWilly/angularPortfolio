@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ThemeService } from './shared/service/theme.service';
 import {
   trigger,
@@ -8,6 +8,8 @@ import {
   animate,
 } from '@angular/animations';
 import { RouterOutlet } from '@angular/router';
+import { MatSidenav } from '@angular/material/sidenav';
+import { SidenavService } from './shared/service/sidenav.service';
 
 @Component({
   selector: 'app-root',
@@ -39,7 +41,12 @@ import { RouterOutlet } from '@angular/router';
   ],
 })
 export class AppComponent implements OnInit {
-  constructor(private themeService: ThemeService) {
+  @ViewChild('sidenav') public sidenav: MatSidenav;
+
+  constructor(
+    private themeService: ThemeService,
+    private sidenavService: SidenavService
+  ) {
     this.themeService.load();
   }
 
@@ -50,5 +57,14 @@ export class AppComponent implements OnInit {
       outlet.activatedRouteData['animation']
     );
   }
+
   ngOnInit() {}
+
+  ngAfterViewInit(): void {
+    this.sidenavService.setSideNav(this.sidenav);
+  }
+
+  toggleSideNav() {
+    this.sidenavService.toggle();
+  }
 }
