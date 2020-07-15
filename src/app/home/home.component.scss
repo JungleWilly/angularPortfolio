@@ -147,30 +147,3 @@ $gray-text: #2c2c2c;
   width: 100%;
   padding-left: 5rem;
 }
-
-#plant-left {
-  animation: plant 2s ease infinite alternate;
-  transform-origin: bottom;
-  transform-box: fill-box;
-}
-
-#plant-right {
-  animation: plant 2s ease infinite alternate 0.5s;
-  transform-origin: bottom;
-  transform-box: fill-box;
-}
-
-#clock-arrow {
-  animation: clock 4s infinite linear;
-  transform-box: fill-box;
-  transform-origin: bottom;
-}
-
-@keyframes plant {
-  from {
-    transform: rotateZ(-2deg);
-  }
-  to {
-    transform: rotateZ(2deg);
-  }
-}
