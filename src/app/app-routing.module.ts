@@ -6,7 +6,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
-  { path: '/', component: HomeComponent, data: { animation: 'HomePage' } },
+  { path: '', component: HomeComponent, data: { animation: 'HomePage' } },
   {
     path: 'projects',
     component: ProjectsComponent,
