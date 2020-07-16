@@ -37,6 +37,10 @@
   min-height: 33.4rem;
 }
 
+.image-xs-sm {
+  min-height: 10rem;
+}
+
 // card content
 
 .tab-content {
@@ -45,11 +49,14 @@
 
 ul {
   margin-top: 1rem;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .techno,
 .tool,
 .production {
+  margin: 2rem 1rem;
   padding: 0.5rem 1rem;
   border: 2px solid;
   border-radius: 0.5rem;
@@ -63,6 +70,7 @@ ul {
   min-width: 0 !important;
   padding: 3px !important;
   margin: 3px !important;
+  flex: 1 1 auto !important;
 }
 
 mat-form-field.mat-form-field {
