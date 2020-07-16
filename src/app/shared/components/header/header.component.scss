@@ -59,3 +59,10 @@ header {
     color: #38d39f;
   }
 }
+
+.position-fixed {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  z-index: 2;
+}

@@ -14,7 +14,7 @@ $light-accent: mat-palette($mat-teal, 600);
 $light-theme: mat-light-theme($light-primary, $light-accent);
 
 // Dark theme
-$dark-primary: mat-palette($mat-blue-grey);
+$dark-primary: mat-palette(($mat-teal));
 $dark-accent: mat-palette($mat-amber, A200, A100, A400);
 $dark-warn: mat-palette($mat-deep-orange);
 $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
@@ -23,7 +23,7 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
 .color-scheme-light {
   @include angular-material-theme($light-theme);
-  background: #f1f8ff;
+  background: rgb(241, 248, 255);
   color: rgb(78, 78, 78);
   p,
   a,
@@ -32,6 +32,11 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   }
   .form-container {
     background: white;
+  }
+
+  .mat-drawer-container {
+    background: rgb(241, 248, 255);
+    color: rgb(78, 78, 78);
   }
 }
 
@@ -104,12 +109,15 @@ router-outlet {
 }
 
 .mat-sidenav {
+  min-width: 100%;
+
   .mat-drawer-inner-container {
-    background-color: #00897b;
+    background-color: transparent;
   }
 
-  a .mat-icon {
-    font-size: 4rem;
+  a .mat-icon,
+  a svg {
+    font-size: 3rem;
     color: white;
   }
 }
@@ -117,5 +125,14 @@ router-outlet {
 .example-button-container {
   display: flex;
   justify-content: center;
-  width: 120px;
+  width: auto;
+}
+
+.mat-drawer-inner-container {
+  width: 100%;
+  max-height: 90vh !important;
+  overflow: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }

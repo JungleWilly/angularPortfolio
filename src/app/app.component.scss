@@ -1,0 +1,51 @@
+.nav-link {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  max-height: 90vh;
+  align-items: flex-start;
+  margin: 8rem 0 0 5%;
+  width: 100%;
+  position: relative;
+}
+
+.social-link {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  width: 100%;
+
+  svg {
+    background-color: #009688;
+    border-radius: 20%;
+    padding: 1rem;
+  }
+
+  li {
+    width: 8rem;
+    padding: auto;
+    &:nth-child(2) {
+      text-align: center;
+      padding-top: 0.15rem;
+    }
+  }
+
+  li a:nth-child(2) {
+    display: inline-block;
+  }
+}
+
+.mat-icon-button {
+  font-size: 5rem;
+  font-weight: 900;
+  color: white;
+}
+
+.precedent-button {
+  margin: 1rem 0;
+  text-align: center;
+  &-div {
+    height: 5rem;
+    width: 5rem;
+  }
+}

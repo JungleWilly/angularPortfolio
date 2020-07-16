@@ -35,22 +35,15 @@ $gray-text: #2c2c2c;
     padding-top: 2rem;
   }
 
-  .text-lt-md {
-    h2 {
-      font-size: 6rem;
-    }
-
-    h3 {
-      font-size: 4rem;
-    }
-  }
   .text-xs {
     h2 {
       font-size: 6rem;
+      padding: 0;
     }
 
     h3 {
       font-size: 5rem;
+      padding: 1rem 0;
     }
   }
 }
