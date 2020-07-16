@@ -1,7 +1,7 @@
 footer {
   background: #00897b;
-  height: 15vh;
-  min-width: 100%;
+  min-height: 15vh;
+  max-width: 100%;
   color: white;
   display: flex;
   flex-flow: row nowrap;
@@ -23,23 +23,58 @@ footer {
 .link,
 .social {
   flex: 1 1 20rem;
-  display: flex;
+
   flex-flow: column;
   justify-content: flex-start;
   width: 30%;
 
   h4 {
     display: block;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
+    letter-spacing: 1px;
     margin-bottom: 2rem;
   }
 }
 
 .link {
   margin-right: 5rem;
+  flex: 1 1 auto;
 }
+
+.links-xs-sm {
+  margin: 2rem 0 2rem 0;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+
+  li {
+    margin: 1rem 0;
+  }
+}
+
 .social {
   margin-left: 5rem;
+  flex: 1 1 auto;
+}
+
+.socials-xs-sm {
+  margin: 2rem 0;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+
+  .social-links {
+    justify-content: space-evenly;
+    li {
+      flex: 1 1 auto;
+      max-height: 5rem;
+    }
+
+    li svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 .footer-links {

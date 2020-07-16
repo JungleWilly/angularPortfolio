@@ -1,8 +1,14 @@
 <footer>
-  <div class="container">
-    <div class="link">
+  <div
+    class="container"
+    fxLayout.xs="column"
+    fxLayout.sm="column"
+    fxLayoutAlign.xs="space-between center"
+    fxLayoutAlign.sm="space-between center"
+  >
+    <div class="link" ngClass.xs="links-xs-sm" ngClass.sm="links-xs-sm">
       <h4>Navigation</h4>
-      <ul class="footer-links">
+      <ul class="footer-links" fxLayout.xs="column" fxLayout.sm="column">
         <li
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
@@ -35,7 +41,7 @@
         </li>
       </ul>
     </div>
-    <div class="social">
+    <div class="social" ngClass.xs="socials-xs-sm" ngClass.sm="socials-xs-sm">
       <h4>Social</h4>
       <ul class="footer-links social-links">
         <li>
