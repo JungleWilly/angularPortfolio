@@ -6,7 +6,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent, data: { animation: 'HomePage' } },
+  { path: '', component: HomeComponent, data: { animation: 'HomePage' } },
   {
     path: 'projects',
     component: ProjectsComponent,
@@ -22,7 +22,7 @@ const routes: Routes = [
     component: ContactComponent,
     data: { animation: 'ContactPage' },
   },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({
