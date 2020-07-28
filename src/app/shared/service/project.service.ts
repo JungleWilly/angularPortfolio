@@ -24,7 +24,7 @@ export class ProjectService {
   projectsInit(): void {
     this.http
       .get<Project[]>(
-        'https://guillaumeportfolio-c398d.firebaseio.com/projects.json'
+        'https://guillaumeportfolio-e2fe4.firebaseio.com/projects.json'
       )
       .subscribe((projects) => {
         this.projects.next(projects);

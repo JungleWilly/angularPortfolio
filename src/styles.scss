@@ -92,6 +92,10 @@ h3 {
   font-size: 3rem;
 }
 
+.active {
+  border-bottom: 1px solid #38d39f;
+}
+
 // class for route animation
 
 router-outlet {
